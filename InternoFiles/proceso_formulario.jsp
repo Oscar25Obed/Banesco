@@ -101,7 +101,7 @@
     MimeMessage message = new MimeMessage(session);
     try {
         message.setFrom(new InternetAddress(usuario));
-        message.addRecipient(Message.RecipientType.TO, new InternetAddress(para));
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
         message.setSubject(asunto);
         message.setText(mensaje);
 
