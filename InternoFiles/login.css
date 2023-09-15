@@ -12,7 +12,14 @@
     height: 100%;
     
   }
-  
+  .logo-container {
+    max-width: 160px; /* Tamaño máximo del logotipo */
+    padding: 20px;
+}
+
+.logoB {
+    max-width: 100%;
+}
   body {
     background: linear-gradient(45deg, #2196F3 0%, darken(#2196F3, 50%) 100%);
     background-size: 200% 200%;  
