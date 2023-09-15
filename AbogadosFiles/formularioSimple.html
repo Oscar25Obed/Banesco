@@ -63,7 +63,10 @@
         <textarea id="bitacora" name="bitacora" rows="5" cols="40" maxlength="3000"></textarea><br><br>
 
         <label for="carga_documentos">Carga de documentos (Máx. 5MB por doc):</label>
-        <input type="file" id="carga_documentos" name="carga_documentos[]" multiple accept=".pdf, .doc, .docx"><br><br>
+        <input type="file" id="carga_documentos" name="carga_documentos[]" multiple accept=".pdf,.jpg,.bmp,.tiff"><br><br>
+
+        <input type="hidden" id="tipoProceso" name="tipoProceso" value="Simple">
+
 
         <input type="submit" value="Enviar">
     </form>
