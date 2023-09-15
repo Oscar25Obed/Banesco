@@ -4,7 +4,7 @@ html {
     
   }
 body{
-    font-family: "Helvetica Neue Bold", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue Bold", Helvetica, oblique, sans-serif;
     margin: 0; padding: 0; border: 0; 
 }
 .notificaciones {
@@ -20,7 +20,7 @@ margin: 10px auto;
 .notificaciones h2 {
 font-size: 24px;
 margin-bottom: 20px;
-color: #333;
+color: #2b5f8c;
 }
 
 /* Estilos para cada notificación */
@@ -31,6 +31,7 @@ border-radius: 5px;
 padding: 15px;
 margin-bottom: 15px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .notificacion h3 {
@@ -39,10 +40,10 @@ color: #333;
 margin-bottom: 10px;
 }
 
-.notificacion p {
+.notificaciones p {
 font-size: 16px;
-color: #666;
 margin-bottom: 5px;
+color: #2b5f8c
 }
 
 .notificacion .fecha {
@@ -125,8 +126,8 @@ a, .nav li a {
     background-color: #FFFFFF;
     color: #E1261C;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     font-size: 14px;
     display: flex;
     justify-content: center;
