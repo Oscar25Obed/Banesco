@@ -2,6 +2,7 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.servlet.*" %>
 <%@ page import="javax.servlet.http.*" %>
+<%@ page import="javax.mail.*, javax.mail.internet.*, java.util.Properties" %>
 
 <!DOCTYPE html>
 <html>
@@ -80,5 +81,79 @@
             out.println("<p>Error: " + e.getMessage() + "</p>");
         }
     %>
+    <%
+    String para = request.getParameter("to");
+
+    // Configuración del servidor SMTP
+    String host = "smtp.gmail.com";  // Cambia según tu proveedor de correo
+    String usuario = "obed8perez@hotmail.com";  // Cambia con tu dirección de correo
+    String contraseña = "oscar2512";  // Cambia con tu contraseña
+
+    Properties properties = System.getProperties();
+    properties.put("mail.smtp.starttls.enable", "true");
+    properties.put("mail.smtp.host", smtp.office365.com);
+    properties.put("mail.smtp.user", obed8perez@hotmail.com);
+    properties.put("mail.smtp.password", oscar2512);
+    properties.put("mail.smtp.port", "587");
+    properties.put("mail.smtp.auth", "false");
+
+    Session session = Session.getDefaultInstance(properties);
+    MimeMessage message = new MimeMessage(session);
+    try {
+        message.setFrom(new InternetAddress(usuario));
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress(para));
+        message.setSubject(asunto);
+        message.setText(mensaje);
+
+        Transport transport = session.getTransport("smtp");
+        transport.connect(smtp.office365.com, obed8perez@hotmail.com, oscar2512);
+        transport.sendMessage('Por este medio hacemos de su conocimiento que se le está enviando un grupo de certificaciones de saldo con su debido sustento, para su revisión y posterior refrendo.');
+        transport.close();
+
+        out.println("Correo enviado correctamente a " + to);
+    } catch (MessagingException mex) {
+        mex.printStackTrace();
+        out.println("Error al enviar el correo: " + mex.getMessage());
+    }
+%>
 </body>
 </html>
+
+<%
+    String para = request.getParameter("para");
+    String asunto = request.getParameter("asunto");
+    String mensaje = request.getParameter("mensaje");
+
+    // Configuración del servidor SMTP
+    String host = "smtp.gmail.com";  // Cambia según tu proveedor de correo
+    String usuario = "tuCorreo@gmail.com";  // Cambia con tu dirección de correo
+    String contraseña = "tuContraseña";  // Cambia con tu contraseña
+
+    Properties properties = System.getProperties();
+    properties.put("mail.smtp.starttls.enable", "true");
+    properties.put("mail.smtp.host", host);
+    properties.put("mail.smtp.user", usuario);
+    properties.put("mail.smtp.password", contraseña);
+    properties.put("mail.smtp.port", "587");
+    properties.put("mail.smtp.auth", "true");
+
+    Session session = Session.getDefaultInstance(properties);
+    MimeMessage message = new MimeMessage(session);
+
+    try {
+        message.setFrom(new InternetAddress(usuario));
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress(para));
+        message.setSubject(asunto);
+        message.setText(mensaje);
+
+        Transport transport = session.getTransport("smtp");
+        transport.connect(host, usuario, contraseña);
+        transport.sendMessage(message, message.getAllRecipients());
+        transport.close();
+
+        out.println("Correo enviado correctamente a " + para);
+    } catch (MessagingException mex) {
+        mex.printStackTrace();
+        out.println("Error al enviar el correo: " + mex.getMessage());
+    }
+%>
