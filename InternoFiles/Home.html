@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <!-- Incluye Bootstrap desde un CDN (o localmente si lo prefieres) -->
+  <link rel="stylesheet" href="Home.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+
+      
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="Home.html">Sistema de Procesos Judiciales de Banesco</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="Home.html">Inicio</a></li>
+            <li><a href="formulario2.html">Certificacion de Saldo</a></li>
+            <li><a href="#">Formulario</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+
+  <div class="notificaciones">
+    <h2>Notificaciones</h2>
+  <!--  <% 
+      try {
+        // Cargar el controlador JDBC
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        // Establecer la conexión con la base de datos
+        String url = "jdbc:mysql://localhost:3306/nombre_de_la_base_de_datos";
+        String usuario = "tu_usuario";
+        String contrasena = "tu_contraseña";
+        Connection conexion = DriverManager.getConnection(url, usuario, contrasena);
+
+        // Consulta SQL para obtener las notificaciones
+        String sql = "SELECT * FROM notificaciones ORDER BY fecha DESC";
+        PreparedStatement statement = conexion.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+
+        // Mostrar las notificaciones
+        if (resultSet.next()) {
+          do {
+            String titulo = resultSet.getString("titulo");
+            String mensaje = resultSet.getString("mensaje");
+            String fecha = resultSet.getString("fecha");
+
+            out.println("<div class='notificacion'>");
+            out.println("<h3>" + titulo + "</h3>");
+            out.println("<p>" + mensaje + "</p>");
+            out.println("<p>Fecha: " + fecha + "</p>");
+            out.println("</div>");
+          } while (resultSet.next());
+        } else {
+          out.println("<p>No hay notificaciones disponibles.</p>");
+        }
+
+        // Cerrar la conexión
+        resultSet.close();
+        statement.close();
+        conexion.close();
+      } catch (Exception e) {
+        out.println("Error: " + e.getMessage());
+      }
+    %>-->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste repellat magnam eius quia esse deleniti unde tenetur, eaque iusto, aut accusamus repudiandae facilis! Corporis vero laboriosam et optio necessitatibus tempora.</p>
+  </div>
+  
+
+  <!-- Tu contenido HTML aquí -->
+
+  <!-- Incluye Bootstrap JavaScript (si es necesario) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Certificación de Saldo</title>
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="Home.html">Sistema de Procesos Judiciales de Banesco</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="Home.html">Inicio</a></li>
+        <li><a href="formulario2.html">Certificacion de Saldo</a></li>
+        <li><a href="#">Formulario</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="notificaciones">
+    <h1>Formulario de Certificación de Saldo</h1>
+    <form id="certificacionForm">
+        <label for="tipoCertificacion">Tipo de Certificación:</label>
+        <select id="tipoCertificacion" name="tipoCertificacion">
+            <option value="">Seleccione un tipo de certificación</option>
+            <option value="prestamo_hipotecario">Préstamo Hipotecario</option>
+            <option value="prestamo_personal">Préstamo Personal</option>
+            <option value="tarjeta_credito">Tarjeta de Crédito</option>
+            <option value="multi_productos">Multi-Productos</option>
+        </select>
+
+        <div><label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        </div>
+        <div>
+        <label for="identificacion">Identificación:</label>
+        <input type="text" id="identificacion" name="identificacion">
+    </div>
+    <div>
+        <label for="nombreCPA">Nombre del Contador Público Autorizado:</label>
+        <select name="nombreCPA" id="nombreCPA">
+          <option value="CPA1">CPA1</option>
+          <option value="CPA2">CPA2</option>
+          <option value="CPA2">CPA3</option>
+
+
+        </select>
+    </div>
+    <div>
+        <label>Fecha:</label>
+            <input type="date" name="fecha" required/>
+            
+        </div>
+        <div>
+            <label>Identificación/RUC del Cliente:</label>
+            <input type="text" name="identificacionCliente" required/>
+        </div>
+            <div>
+                <label>Tipo de producto:</label>
+                <input type="text" name="tipoProducto" required>
+              </div>
+              <div>
+                <label>Numero de Prestamo:</label>
+                <input type="text"name="numeroPrestamo" required/>
+              </div>    
+            <div>
+              <label for="nombreApoderadoBanco">Nombre del Apoderado del Banco:</label>
+              <select name="nombreApoderadoBanco" id="nombreApoderadoBanco" required>
+                <option value="Apoderado1">Apoderado1</option>
+                <option value="Apoderado2">Apoderado2</option>
+                <option value="Apoderado3">Apoderado3</option>
+              </select>
+              
+              </div>
+
+              <div>
+                <label>Identificación del Apoderado del Banco:</label>
+                <input type="text" name="identificacionApoderadoBanco"required
+                />
+              </div>
+        <div id="camposEspecificos" style="display: none;">
+            <!-- Campos específicos para cada tipo de certificación se mostrarán aquí -->
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("certificacionForm");
+        const tipoCertificacion = document.getElementById("tipoCertificacion");
+        const camposEspecificos = document.getElementById("camposEspecificos");
+
+        tipoCertificacion.addEventListener("change", () => {
+            // Reiniciar campos específicos al cambiar el tipo de certificación
+            camposEspecificos.innerHTML = "";
+
+            // Mostrar campos específicos según la selección del usuario
+            const seleccion = tipoCertificacion.value;
+            if (seleccion === "prestamo_hipotecario" || seleccion === "prestamo_personal") {
+                // Campos para Préstamo Hipotecario o Préstamo Personal
+                camposEspecificos.innerHTML = `
+                
+                <div>
+  <label>Saldo a Capital:</label>
+  <input
+    type="number"
+    name="capital"
+    min="0"
+    required
+  />
+</div>
+
+<div>
+  <label>Intereses:</label>
+  <input
+    type="number"
+    name="intereses"
+    min="0"
+    required
+  />
+</div>
+
+<div>
+  <label>Gastos:</label>
+  <input
+    type="number"
+    name="gastos"
+
+    min="0"
+    required
+  />
+</div>
+
+<div>
+  <label>FECI:</label>
+  <input
+    type="number"
+    name="feci"
+    min="0"
+    required
+  />
+</div>
+
+<div>
+  <label>Comisión Fiduciaria:</label>
+  <input
+    type="number"
+    name="comisionFiduciaria"
+    value={this.state.comisionFiduciaria}
+    onChange={this.handleInputChange}
+    min="0"
+    required
+  />
+</div>
+<div>
+  <label>Saldo Total:</label>
+  <input
+    type="number"
+    name="saldoTotal"
+    min="0"
+    value={this.state.saldoTotal}
+    onChange={this.handleInputChange}
+    required
+  />
+</div>
+                `;
+            } else if (seleccion === "tarjeta_credito") {
+                // Campos para Tarjeta de Crédito
+                camposEspecificos.innerHTML = `
+                <div>
+  <label>Saldo a Total:</label>
+  <input
+    type="number"
+    name="total"
+    min="0"
+    required
+  />
+</div>
+                `;
+            } else if (seleccion === "multi_productos") {
+                // Campos para Multi-Productos
+                camposEspecificos.innerHTML = `
+                <div>
+  <label>Saldo a Capital:</label>
+  <input
+    type="number"
+    name="capital"
+    min="0"
+    required
+  />
+</div>
+
+<div>
+  <label>Intereses:</label>
+  <input
+    type="number"
+    name="intereses"
+    min="0"
+    required
+  />
+</div>
+
+<div>
+  <label>Gastos:</label>
+  <input
+    type="number"
+    name="gastos"
+
+    min="0"
+    required
+  />
+</div>
+
+<div>
+  <label>FECI:</label>
+  <input
+    type="number"
+    name="feci"
+    min="0"
+    required
+  />
+</div>
+
+<div>
+  <label>Comisión Fiduciaria:</label>
+  <input
+    type="number"
+    name="comisionFiduciaria"
+    value={this.state.comisionFiduciaria}
+    onChange={this.handleInputChange}
+    min="0"
+    required
+  />
+</div>
+<div>
+  <label>Saldo Total:</label>
+  <input
+    type="number"
+    name="saldoTotal"
+    min="0"
+    value={this.state.saldoTotal}
+    onChange={this.handleInputChange}
+    required
+  />
+</div>
+                <div>
+                <label>Tipo de producto:</label>
+                <input type="text" name="tipoProducto" required>
+              </div>
+              <div>
+                <label>Numero de Prestamo:</label>
+                <input type="text"name="numeroPrestamo" required/>
+              </div>  
+              <div>
+  <label>Saldo:</label>
+  <input
+    type="number"
+    name="saldoTotal"
+    min="0"
+    value={this.state.saldoTotal}
+    onChange={this.handleInputChange}
+    required
+  />
+</div>
+                `;
+            }
+
+            // Mostrar o ocultar campos específicos según la selección
+            camposEspecificos.style.display = seleccion ? "block" : "none";
+        });
+    </script>
+  </div>
+</body>
+</html>

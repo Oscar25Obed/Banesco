@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <!-- Incluye Bootstrap desde un CDN (o localmente si lo prefieres) -->
+  <link rel="stylesheet" href="HomeA.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+
+      
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="HomeA.html">Sistema de Procesos Judiciales de Banesco</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="HomeA.html">Inicio</a></li>
+            <li><a href="formularioHipotecario.html">Proceso Ejecutivo Hipotecario</a></li>
+            <li><a href="formularioSimple.html">Proceso Ejecutivo Simple</a></li>
+            <li><a href="formularioOrdinario.html">Proceso Ordinario</a></li>
+            <li><a href="formularioSumario.html">Proceso Sumario</a></li>
+            <li><a href="formularioOrales.html">Proceso Orales</a></li>
+
+          </ul>
+        </div>
+      </nav>
+      
+
+  <div class="notificaciones">
+    <h1>Formulario de Proceso Ejecutivo Hipotecario</h1>
+    <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+      <label for="numero_expediente">Número de Expediente (solo números):</label>
+      <input type="number" id="numero_expediente" name="numero_expediente"><br><br>
+
+        <label for="fecha_demanda">Fecha introducción de la demanda:</label>
+        <input type="date" id="fecha_demanda" name="fecha_demanda"><br><br>
+
+        <label for="proceso_demanda">Proceso de la demanda:</label>
+        <select id="proceso_demanda" name="proceso_demanda">
+            <option value="PD">Presentación de la demanda</option>
+            <option value="AD">Admisión de la demanda</option>
+            <option value="CD">Contestación de la Demanda</option>
+            <option value="EI">Embargo en Inscripción en el Registro Público</option>
+            <option value="EN">Emplazamiento/Notificación</option>
+            <option value="AD">Asignación de Defensor</option>
+            <option value="EX">Excepciones</option>
+            <option value="DR">Designación de fecha de Remate</option>
+            <option value="AP">Adjudicación Provisional</option>
+            <option value="AD">Adjudicación Definitiva</option>
+            <option value="AE">Apelación</option>
+            <option value="ED">Entrega de Documentación para ingresar a Registro Público</option>
+            <option value="IF">Inscripción/ Proceso Finalizado</option>
+            <option value="PS">Proceso Suspendido</option>
+            <option value="PD">Proceso Desistido</option>
+            <option value="CA">Caducado</option>
+        </select><br><br>
+
+        <label for="bitacora">Bitácora (Texto libre, máximo 3000 caracteres):</label><br>
+        <textarea id="bitacora" name="bitacora" rows="5" cols="40" maxlength="3000"></textarea><br><br>
+
+        <label for="carga_documentos">Carga de documentos (Máx. 5MB por doc):</label>
+        <input type="file" id="carga_documentos" name="carga_documentos[]" multiple accept=".pdf, .doc, .docx"><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+  </div>
+  
+
+  <!-- Tu contenido HTML aquí -->
+
+  <!-- Incluye Bootstrap JavaScript (si es necesario) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
