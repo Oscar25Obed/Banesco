@@ -41,3 +41,39 @@ margin-bottom: 5px;
 font-size: 14px;
 color: #999;
 }
+nav {
+    background-color: #007953;
+    padding: 10px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.nav-links li a:hover {
+    color: #E1261C;
+}
+.logoB{
+    max-width: 230px;
+  }
