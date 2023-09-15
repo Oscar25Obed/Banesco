@@ -191,3 +191,25 @@ body {
 .notification-list ul li:last-child {
   border-bottom: none;
 }
+.formulario {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #3498db; /* Cambia el color del borde al enfocar */
+}
