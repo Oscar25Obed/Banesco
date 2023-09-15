@@ -33,9 +33,9 @@
 
   <div class="form-box">
     <h1>Formulario de Proceso Sumario</h1>
-    <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+    <form action="procesoAbogado.jsp" method="post" enctype="multipart/form-data">
       <label for="numero_expediente">Número de Expediente (solo números):</label>
-      <input type="number" id="numero_expediente" name="numero_expediente"><br><br>
+      <input type="text" id="numero_expediente" name="numero_expediente" min="0"><br><br>
 
         <label for="fecha_demanda">Fecha introducción de la demanda:</label>
         <input type="date" id="fecha_demanda" name="fecha_demanda"><br><br>

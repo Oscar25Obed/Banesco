@@ -30,7 +30,7 @@
 
   <div class="form-box">
     <h1>Formulario de Certificación de Saldo</h1>
-    <form id="certificacionForm">
+    <form id="certificacionForm" action="proceso_formulario.jsp" method="post">
         <label for="tipoCertificacion">Tipo de Certificación:</label>
         <select id="tipoCertificacion" name="tipoCertificacion">
             <option value="">Seleccione un tipo de certificación</option>
@@ -98,7 +98,7 @@
             <!-- Campos específicos para cada tipo de certificación se mostrarán aquí -->
         </div>
 
-        <button type="submit" class="toggle-btn">Enviar</button>
+        <button type="submit" value="enviar">Enviar</button>
     </form>
 
     <script>
@@ -261,17 +261,17 @@
 </div>
                 <div>
                 <label>Tipo de producto:</label>
-                <input type="text" name="tipoProducto" required>
+                <input type="text" name="tipoProductoB" required>
               </div>
               <div>
                 <label>Numero de Prestamo:</label>
-                <input type="text"name="numeroPrestamo" required/>
+                <input type="text"name="numeroPrestamoB" required/>
               </div>  
               <div>
   <label>Saldo:</label>
   <input
     type="number"
-    name="saldoTotal"
+    name="saldoTotalB"
     min="0"
     value={this.state.saldoTotal}
     onChange={this.handleInputChange}
