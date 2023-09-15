@@ -14,7 +14,7 @@ border-radius: 8px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 padding: 20px;
 max-width: 600px;
-margin: 0 auto;
+margin: 10px auto;
 }
 
 .notificaciones h2 {
@@ -54,6 +54,8 @@ nav {
 
 }
 
+/* styles.css */
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -65,7 +67,16 @@ nav {
     color: #FFFFFF;
     font-size: 22px;
     font-weight: bold;
-    
+}
+
+.logo-container {
+    max-width: 230px; /* Tamaño máximo del logotipo */
+    padding: 20px;
+}
+
+.logoB {
+    max-width: 100%;
+  
 }
 
 .nav-links {
@@ -85,14 +96,66 @@ nav {
 .nav-links li a:hover {
     color: #8f8d8d;
 }
-.logoB{
-    max-width: 230px;
-    padding: 20px;
-  }
+
+
 a, .nav li a {
     -moz-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     -ms-transition: all 0.2s ease-in;
+}
+/* styles.css */
+
+.notification-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: #E1261C;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.notification-badge {
+    background-color: #FFFFFF;
+    color: #E1261C;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-list {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 200px;
+    background-color: #FFFFFF;
+    border: 1px solid #E1261C;
+    border-radius: 5px;
+    display: none;
+}
+
+.notification-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-list ul li {
+    padding: 10px;
+    border-bottom: 1px solid #E1261C;
+    text-align: center;
+}
+
+.notification-list ul li:last-child {
+    border-bottom: none;
 }

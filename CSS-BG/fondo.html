@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- divinectorweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Background using HTML and CSS | No Javascript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="Home.html">
+                    <div class="logo-container">
+                        <img class="logoB" src="http://blog.banesco.com/wp-content/uploads/2016/05/banesco-blanco.png" alt="Logo Banesco">
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="Home.html">INICIO</a></li>
+                <li><a href="formulario2.html">CERTIFICACIÓN DE SALDOS</a></li>
+                <li><a href="formularioMaster.html">FORMULARIO MASTER</a></li>
+                <li><a href="#">FORMULARIO</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="form-box">
+        <h1>Formulario de Proceso Sumario</h1>
+        <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+          <label for="numero_expediente">Número de Expediente (solo números):</label>
+          <input type="number" id="numero_expediente" name="numero_expediente"><br><br>
+    
+            <label for="fecha_demanda">Fecha introducción de la demanda:</label>
+            <input type="date" id="fecha_demanda" name="fecha_demanda"><br><br>
+    
+            <label for="proceso_demanda">Proceso de la demanda:</label>
+            <select id="proceso_demanda" name="proceso_demanda">
+                <option value="PD">Presentación de la demanda</option>
+                <option value="AD">Admisión de la demanda</option>
+                <option value="ND">Notificación de la demanda</option>
+                <option value="CD">Contestación de la Demanda</option>
+                <option value="PDR">Presentación de demanda de reconvención</option>
+                <option value="CDR">Contestación de demanda de reconvención</option>
+                <option value="CP">Contrapruebas</option>
+                <option value="SAN">Saneamiento</option>
+                <option value="AP">Admisión de pruebas</option>
+                <option value="PP">Práctica de pruebas</option>
+                <option value="AL">Alegatos</option>
+                <option value="SEN">Sentencia</option>
+                <option value="APE">Apelación</option>
+                <option value="API">Admisión y práctica de pruebas II instancia</option>
+                <option value="RII">Resolución de II instancia</option>
+                <option value="CAS">Casación</option>
+                <option value="DP">Desistimiento del Proceso</option>
+                <option value="TJ">Transacción judicial</option>
+                <option value="TE">Transacción extrajudicial</option>
+                <option value="EJS">Ejecución de sentencia</option>
+                <option value="SP">Suspensión del proceso</option>
+            </select><br><br>
+    
+            <label for="bitacora">Bitácora (Texto libre, máximo 3000 caracteres):</label><br>
+            <textarea id="bitacora" name="bitacora" rows="5" cols="40" maxlength="3000"></textarea><br><br>
+    
+            <label for="carga_documentos">Carga de documentos (Máx. 5MB por doc):</label>
+    <input type="file" id="carga_documentos" name="carga_documentos[]" multiple accept=".pdf,.jpg,.bmp,.tiff"><br><br>
+    
+            <input type="hidden" id="tipoProceso" name="tipoProceso" value="Sumario">
+    
+            <input type="submit" value="Enviar">
+        </form>
+      </div>
+      
+    <div class="wrapper">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+</div>
+<div class="wrapperer">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="wrapperblue">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="banner">
+	<div class="content">
+
+	</div>
+</div>
+
+</body>
+</html>
