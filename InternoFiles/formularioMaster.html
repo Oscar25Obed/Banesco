@@ -3,9 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario Master</title>
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="Home.html">Sistema de Procesos Judiciales de Banesco</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="Home.html">Inicio</a></li>
+            <li><a href="formulario2.html">Certificacion de Saldo</a></li>
+            <li><a href="formularioMaster.html">Formulario Master</a></li>
+            <li><a href="#">Procesos</a></li>
+          </ul>
+        </div>
+      </nav>
     
+    <div class="form-box">
+    <h1>Formulario de Caso para Demanda</h1>
+    <form action="procesar_formulario.php" method="post">
+        <label for="no_cliente">NO. CLIENTE:</label>
+        <input type="number" id="no_cliente" name="no_cliente" min="0">
+
+        <label for="cliente">CLIENTE:</label>
+        <input type="text" id="cliente" name="cliente">
+
+        <label for="producto">Producto:</label>
+        <select id="producto" name="producto" required>
+            <option value="">Seleccione un producto</option>
+            <option value="prestamo_hipotecario">Préstamo Hipotecario</option>
+            <option value="prestamo_personal">Préstamo Personal</option>
+            <option value="tarjeta_credito">Tarjeta de Crédito</option>
+            <option value="multi_productos">Multi-Productos</option>
+        </select>
+
+        <label for="no_operacion">No. De Operación:</label>
+        <input type="number" id="no_operacion" name="no_operacion" min="0">
+        
+        <label for="abogado">ABOGADO:</label>
+        <input type="text" id="abogado" name="abogado">
+        
+        <label for="fecha_asignacion">FECHA DE ASIGNACIÓN DEL CASO PARA DEMANDA:</label>
+        <input type="date" id="fecha_asignacion" name="fecha_asignacion">
+        
+        <label for="estatus">ESTATUS:</label>
+        <input type="text" id="estatus" name="estatus">
+        
+
+        <label for="monto_demandado">MONTO DEMANDADO:</label>
+        <input type="text" id="monto_demandado" name="monto_demandado" pattern="^\d+(\.\d{1,2})?$">
+
+        
+        <label for="tipo_inmueble">TIPO DE INMUEBLE:</label>
+        <input type="text" id="tipo_inmueble" name="tipo_inmueble">
+        
+        <label for="garantia">GARANTÍA:</label>
+        <input type="text" id="garantia" name="garantia">
+        
+        <label for="descubierto_garantia">DESCUBIERTO SEGÚN GARANTIA:</label>
+        <input type="text" id="descubierto_garantia" name="descubierto_garantia">
+        
+        <label for="valor_avaluo">VALOR DE AVALUO DE LA GARANTÍA:</label>
+        <input type="text" id="valor_avaluo" name="valor_avaluo" pattern="^\d+(\.\d{1,2})?$">
+        
+        <label for="fecha_avaluo">FECHA DE AVALUO:</label>
+        <input type="date" id="fecha_avaluo" name="fecha_avaluo">
+        
+        <label for="empresa_avaluadora">EMPRESA AVALUADORA:</label>
+        <input type="text" id="empresa_avaluadora" name="empresa_avaluadora">
+        
+        <label for="juzgado">JUZGADO:</label>
+        <input type="text" id="juzgado" name="juzgado">
+        
+        <label for="expediente">EXPEDIENTE:</label>
+        <input type="number" id="expediente" name="expediente" min="0">
+        
+        <label for="comentario">COMENTARIO:</label><br>
+        <textarea id="comentario" name="comentario" rows="5" cols="40"></textarea>
+        
+        <label for="fecha_finalizacion">Fecha Estimada de Finalización:</label>
+        <input type="date" id="fecha_finalizacion" name="fecha_finalizacion">
+        
+        <label for="porcentaje_honorarios">Porcentaje de Honorarios:</label>
+        <input type="text" id="porcentaje_honorarios" name="porcentaje_honorarios">
+        
+        <label for="pendiente_pago_2020">Pendiente de Pago 2020:</label>
+        <input type="text" id="pendiente_pago_2020" name="pendiente_pago_2020" pattern="^\d+(\.\d{1,2})?$">
+        
+        <label for="pendiente_pago_2021">Pendiente de Pago 2021:</label>
+        <input type="text" id="pendiente_pago_2021" name="pendiente_pago_2021" pattern="^\d+(\.\d{1,2})?$">
+        
+        <label for="estimacion_gastos_adjudicacion">Estimación de Gastos de Adjudicación:</label>
+        <input type="text" id="estimacion_gastos_adjudicacion" name="estimacion_gastos_adjudicacion">
+        
+
+        <input type="submit" value="Enviar">
+    </form>
+    </div> 
 </body>
 </html>

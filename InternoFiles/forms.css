@@ -24,6 +24,10 @@ body {
     margin-bottom: 20px;
     color: #2b5f8c;
     }
+    .form-box h1 {
+      font-weight: bold;
+      }
+
     form {
         width: 300px;
         margin-left: 20px;
