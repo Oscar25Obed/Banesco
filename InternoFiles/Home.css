@@ -1,4 +1,12 @@
-/* Estilos para el contenedor de notificaciones */
+html {
+    width: 100%;
+    height: 100%;
+    
+  }
+body{
+    font-family: "Helvetica Neue Bold", Helvetica, Arial, sans-serif;
+    margin: 0; padding: 0; border: 0; 
+}
 .notificaciones {
 background-color: #f5f5f5;
 border: 1px solid #ccc;
@@ -43,7 +51,7 @@ color: #999;
 }
 nav {
     background-color: #007953;
-    padding: 10px;
+
 }
 
 .nav-container {
@@ -55,25 +63,36 @@ nav {
 .logo a {
     text-decoration: none;
     color: #FFFFFF;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-
+    
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
+    font-size: medium;
+    font-weight: bold;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #FFFFFF;
+    margin-right: 10px;
 }
 
 .nav-links li a:hover {
-    color: #E1261C;
+    color: #8f8d8d;
 }
 .logoB{
     max-width: 230px;
+    padding: 20px;
   }
+a, .nav li a {
+    -moz-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+}
