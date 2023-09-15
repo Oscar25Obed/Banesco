@@ -22,7 +22,6 @@
             <li><a href="Home.html">INICIO</a></li>
             <li><a href="formulario2.html">CERTIFICACIÓN DE SALDOS</a></li>
             <li><a href="formularioMaster.html">FORMULARIO MASTER</a></li>
-            <li><a href="#">FORMULARIO</a></li>
         </ul>
     </div>
 </nav>
@@ -39,6 +38,10 @@
             <option value="tarjeta_credito">Tarjeta de Crédito</option>
             <option value="multi_productos">Multi-Productos</option>
         </select>
+        <div>
+          <label for="to">Correo del abogado:</label>
+          <input type="email" id="to" name="to" required><br>
+        </div>
         <div><label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre">
         </div>
@@ -322,6 +325,27 @@
     </div>
     
   </div>
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        const to = document.getElementById('to').value;
+
+        // Envía los datos al servidor
+        fetch('/enviar-correo', {
+            method: 'POST',
+            body: JSON.stringify({ to }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .catch(error => {
+            const statusElement = document.getElementById('status');
+            statusElement.textContent = 'Error al enviar el correo electrónico: ' + error.message;
+        });
+    });
+</script>
   <div class="notification-icon" onclick="toggleNotifications()">
     <div class="notification-badge">3</div>
 </div>

